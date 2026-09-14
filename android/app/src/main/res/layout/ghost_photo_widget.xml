@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:clipToOutline="true">
+
+    <!-- Active Widget Image -->
+    <ImageView
+        android:id="@+id/widget_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <!-- Placeholder layout shown when no album or image is selected -->
+    <LinearLayout
+        android:id="@+id/placeholder_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👻"
+            android:textSize="36sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ghost Gallery"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Tap to choose an album"
+            android:textColor="#B0B0C0"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Bottom Readability Gradient Overlay - Changed to FrameLayout for RemoteViews compatibility -->
+    <FrameLayout
+        android:id="@+id/gradient_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gradient_overlay"
+        android:visibility="gone" />
+
+    <!-- Branding at the top right (cute and subtle) -->
+    <TextView
+        android:id="@+id/widget_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="12dp"
+        android:text="👻 Gallery"
+        android:textColor="#80FFFFFF"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:shadowColor="#80000000"
+        android:shadowRadius="3"
+        android:shadowDx="1"
+        android:shadowDy="1"/>
+
+    <!-- Bottom Info & Buttons Panel -->
+    <RelativeLayout
+        android:id="@+id/control_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="12dp"
+        android:visibility="gone">
+
+        <!-- Album details text -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/buttons_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/widget_album_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Camera"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:shadowColor="#B0000000"
+                android:shadowRadius="4"
+                android:shadowDx="1"
+                android:shadowDy="1" />
+
+            
+        </LinearLayout>
+
+        <!-- Quick actions layout -->
+        <LinearLayout
+            android:id="@+id/buttons_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <!-- Refresh button - Changed to TextView with Emoji for maximum ROM compatibility -->
+            <TextView
+                android:id="@+id/btn_refresh"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/circle_button_background"
+                android:contentDescription="Refresh Image"
+                android:gravity="center"
+                android:text="🔄"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Re-configure button - Changed to TextView with Emoji & layout margin instead of generic spacer View -->
+            <TextView
+                android:id="@+id/btn_settings"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/circle_button_background"
+                android:contentDescription="Select Album"
+                android:gravity="center"
+                android:text="⚙️"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

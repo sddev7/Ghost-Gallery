@@ -1,0 +1,19 @@
+name: android_media_manager
+description: Local Android Media Manager Plugin
+version: 0.0.1
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: in.sddev.ghost_gallery.android_media_manager
+        pluginClass: AndroidMediaManagerPlugin
