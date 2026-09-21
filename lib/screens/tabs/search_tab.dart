@@ -1865,19 +1865,6 @@ class _SearchTabState extends State<SearchTab>
                                 color: textColor,
                               ),
                             ),
-                            const SizedBox(width: 6),
-                            ValueListenableBuilder<EntitlementStatus>(
-                              valueListenable: EntitlementService.instance.statusNotifier,
-                              builder: (context, status, _) {
-                                final isPremium = status == EntitlementStatus.subscribed ||
-                                    status == EntitlementStatus.trialRunning;
-                                return Icon(
-                                  Icons.workspace_premium_rounded,
-                                  size: 16,
-                                  color: isPremium ? Colors.grey : Colors.amber,
-                                );
-                              },
-                            ),
                           ],
                         ),
                       ),

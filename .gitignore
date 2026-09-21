@@ -31,6 +31,7 @@ key.properties
 .pub-cache/
 .pub/
 build/
+android/.kotlin/
 **/build/
 /coverage/
 
